@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+
+
+.main-text{
+  color: white; /* White text */
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Dark shadow for contrast */
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: bold;
+}
