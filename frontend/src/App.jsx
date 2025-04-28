@@ -1,18 +1,71 @@
-import { Check } from "./Components/check/Check"
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/navbar/Navbar";
+import { Form } from "./Components/form/Form";
+import Videos from "./Components/testimonialVideos/Testimonial";
+import TrainerAdmin from "./Components/Admin-panel/Form";
+import TrainerShowcase from "./Components/TrainersPanel/Trainershowcase";
+import TestimonialAdminPanel from "./Components/Admin-panel/Testimonial";
+import ConsultationSection from "./Components/Hero/SectionB";
+import Hero from "./Components/Hero/Hero";
+import StuckSection from "./Components/Hero/Stuck";
+import Owner from "./Components/Hero/Owner";
+import Footer from "./Components/Hero/Footer";
 
-import React from 'react'
-import Hero from "./Components/Hero/Hero"
-import Navbar from "./Components/navbar/Navbar"
-
-function App() {
+function HomePage() {
   
+  
+
   return (
     <>
-    <Navbar/>
-<Hero/>
+      <Navbar />
+      <Hero/>
+      <StuckSection/>
+     
+     
+      <ConsultationSection/>
+      
+      
+      <Owner/>
+      <Footer/>
+      
+    </>
+  );
+}
 
+function Mycard(){
+  return(
+
+
+
+    <>
+    <Videos />
+    <Form />
+    <TrainerShowcase/>
+    <Footer/>
     </>
   )
 }
 
-export default App
+function AdminPage() {
+  return (
+    <>
+      <TrainerAdmin/>
+      <TestimonialAdminPanel/>
+      
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/admin" element={<AdminPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
